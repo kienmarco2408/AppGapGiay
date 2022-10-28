@@ -6,7 +6,7 @@ import {
   View,
   ImageBackground,
   StatusBar,
-  TouchableOpacity,
+  TouchableHighlight,
   ScrollView,
   Alert,
 } from 'react-native';
@@ -16,6 +16,7 @@ import DoAn from '../components/DoAn';
 import DoBay from '../components/DoBay';
 import Nuoc from '../components/Nuoc';
 import Can from '../components/Can';
+import { category } from '../components/data';
 const Home = () => {
   return (
     <View style={styles.container}>
@@ -28,7 +29,53 @@ const Home = () => {
           />
         </View>
 
-        <View
+        <View>
+        <TouchableHighlight
+          onPress={() => {console.log('hehe');}}
+          underlayColor={'#FFFFFF'}
+        >
+          <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row' }}>
+            <View
+              style={{
+                width: '70%',
+                height: '100%',
+                backgroundColor: '#FFAC30',
+                borderWidth: 1,
+                borderColor: '#FFAC30',
+                borderTopLeftRadius: 15,
+                borderBottomLeftRadius: 15,
+              }}
+            >
+              <View
+                style={{
+                  marginVertical: '2%',
+                  justifyContent: 'space-evenly',
+                  alignItems: 'center',
+                }}
+              >
+                <Text style={{ color: '#fff', fontWeight: '700', fontSize: 25 }}>
+                  {category[0].objTitle}
+                </Text>
+              </View>
+            </View>
+            <View
+              style={{
+                width: '15%',
+                height: '100%',
+                backgroundColor: 'white',
+                borderTopRightRadius: 15,
+                borderBottomRightRadius: 15,
+              }}
+            >
+              <Image
+                source={require('../assets/icon/Piza.png')}
+                style={{ alignSelf: 'center', marginTop: 5 }}
+              />
+            </View>
+          </View>
+        </TouchableHighlight>
+        </View>
+        {/* <View
           style={{
             marginTop: '10%',
           }}
@@ -64,7 +111,7 @@ const Home = () => {
           }}
         >
           <Nuoc />
-        </View>
+        </View> */}
         <View style={{ marginTop: '15%', justifyContent: 'center' }}>
           <Image
             source={require('../assets/hoatiet.png')}

@@ -74,7 +74,7 @@ function Splash({ navigation }) {
             </View>
 
             <View style={{ top: '25%' }}>
-            <Image source={category.doAn.list[2].pic[7]} style={{height:100, width: 100}}/>
+            
               <Button
                 style={{
                   width: 264,
