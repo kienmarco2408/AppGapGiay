@@ -8,8 +8,10 @@ import {
   TouchableOpacity,
   Alert,
 } from 'react-native';
-import { Button } from 'react-native-paper';
+import { Button, List } from 'react-native-paper';
+import { category } from '../components/data';
 function Splash({ navigation }) {
+  
   return (
     <View style={styles.container}>
       <StatusBar />
@@ -32,7 +34,6 @@ function Splash({ navigation }) {
             <View style={{ top: '5%' }}>
               <Image source={require('../assets/logo.png')} />
             </View>
-
             <View style={{ top: '7%' }}>
               <Text
                 style={{
@@ -73,6 +74,7 @@ function Splash({ navigation }) {
             </View>
 
             <View style={{ top: '25%' }}>
+            <Image source={category.doAn.list[2].pic[7]} style={{height:100, width: 100}}/>
               <Button
                 style={{
                   width: 264,
@@ -88,7 +90,7 @@ function Splash({ navigation }) {
                 ĐỒNG Ý VÀ TIẾP TỤC{' '}
               </Button>
             </View>
-
+            
             <View style={{ top: '30%' }}>
               <Text style={{ fontSize: 14, textAlign: 'center' }}>
                 Bạn đã có tài khoản chưa ? {''}
