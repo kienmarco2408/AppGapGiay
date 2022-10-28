@@ -24,6 +24,7 @@ const Home = () => {
           <Image
             style={{ width: '15%', height: 40 }}
             source={require('../assets/happy.png')}
+            
           />
         </View>
 

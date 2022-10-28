@@ -48,7 +48,7 @@ function Splash({ navigation }) {
 
             <View style={{ top: '5%' }}>
               <Text
-                style={{ fontWeight: '400', fontSize: 12, textAlign: 'center' }}
+                style={{ fontWeight: '400', fontSize: 14, textAlign: 'center' }}
               >
                 {'\n'}Nhấn vào Chấp nhận và Tiếp tục để {'\n'} xác nhận bạn đã
                 xem lại và chấp nhận.{'\n'} Điều khoản sử dụng và chính sách bảo{' '}
@@ -58,7 +58,7 @@ function Splash({ navigation }) {
 
             <View style={{ top: '10%' }}>
               <Text
-                style={{ fontWeight: '700', fontSize: 12, textAlign: 'center' }}
+                style={{ fontWeight: '700', fontSize: 14, textAlign: 'center' }}
               >
                 {'\n'}Điều khoản sử dụng
               </Text>
