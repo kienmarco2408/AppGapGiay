@@ -59,6 +59,7 @@ function NewsStacks() {
   return (
     <NewsStack.Navigator screenOptions={{ headerShown: false }}>
       <NewsStack.Screen name="News Stack" component={News} />
+      <NewsStack.Screen name="Read" component={Read} />
     </NewsStack.Navigator>
   );
 }
@@ -215,8 +216,6 @@ function RootStack() {
         <RootStacks.Screen name="Tabs" component={Tabs} />
 
         <RootStacks.Screen name="Food" component={FoodDetail} />
-
-        <RootStacks.Screen name="Read" component={Read} />
       </RootStacks.Navigator>
     </NavigationContainer>
   );
