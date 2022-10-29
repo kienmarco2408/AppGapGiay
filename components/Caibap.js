@@ -9,22 +9,16 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import {category} from '../components/data.js'
 
-function CaiBap({ navigation }) {
+function CaiBap1({ navigation }) {
   return (
     <View style={styles.MainContainer}>
-      
-      <View style={{ marginLeft: 40, marginTop: 20 }}>
-        <Image
-          style={{ width: '15%', height: 40 }}
-          source={require('../assets/happy.png')}
-        />
-      </View>
       <TouchableOpacity onPress={() => navigation.navigate('C2')}>
-        
+        <Image
+          source={require('../assets/c1.png')}
+          style={{ borderRadius: 20, borderColor: '#FFAC30', borderWidth: 5 }}
+        />
       </TouchableOpacity>
-      
     </View>
   );
 }
@@ -43,4 +37,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default CaiBap;
+export default CaiBap1;
