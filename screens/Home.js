@@ -37,9 +37,9 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <View style={styles.background}>
-        <View style={{ marginLeft: 40, marginTop: 20 }}>
+        <View>
           <Image
-            style={{ width: '15%', height: 40 }}
+            style={{width: vw(115) , height: vw(40), marginLeft: 0 }}
             source={require('../assets/cloud.png')}
             
           />
