@@ -9,6 +9,7 @@ import {
   TouchableHighlight,
   ScrollView,
   Alert,
+  TouchableOpacity,
 } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
 import { category } from '../components/data';
@@ -19,42 +20,203 @@ const Home = () => {
   const [numList, setNumList] = useState(0)
   const [numObj, setNumObj] = useState(0)
   const [doneScreen, setDoneScreen] = useState(false)
+  const [isDone, setIsDone] = useState(false)
+  const [x, setX] = useState(false)
   const objHidden = 'diplay: none'
   const objVisible = 'display: true'
 
   const nextPic = () => {
-    if (numListPic < category[numObj].list[numList].pic.length - 1) {
+    if (numListPic < category[numObj].list[numList].pic.length) {
       setNumListPic(numListPic + 1)
-      
     } else {
       setDoneScreen(true)
     }
   }
+
   const reset = () => {
     setNumListPic(0)
     setDoneScreen(false)
   }
 
-  const origamiPic = () => {
-    <View>
-      <View
-        style={{height: vw(60), width: vw(100)}}>
-      </View>
+  const origamiList = () => {
+    return (
+      <View>
+        <View>
+          <TouchableOpacity
+          onPress={nextPic}
+          >
+            <View
+            style={{
+              borderRadius: 20,
+              height: vw(36),
+              width: vw(40),
+              backgroundColor: 'white',
+              alignSelf: 'center',
+              top: vw(-10),
+              borderColor: '#FFAC30',
+              borderWidth: 4,
+              position: 'relative',
+            }}>
+              <Text style={{alignSelf: 'center', fontSize: 22, fontWeight: 'bold', color: 'black', top: vw(4), position: 'absolute', zIndex: 1}}>
+                {category[numObj].list[0].listTitle}</Text>
+              <Image source={category[numObj].list[0].pic[category[numObj].list[0].pic.length-1]}
+              style={{width: '100%', height: '100%', marginTop: vw(4)}}
+              resizeMethod='resize'
+              resizeMode='contain'
+              />
+            </View>
+          </TouchableOpacity>
+        </View>
 
-      <View
-      style={{
-        position: 'absolute',
-        flex: 1,
-        borderWidth: 10,
-        height: vw(80),
-        width: vw(80),
-        backgroundColor: 'black'
-      }}>
-        <Text>heheheh</Text>
+        <View style={{ marginTop: vw(3) ,width: vw(90), flexDirection:'row', alignSelf: 'center', justifyContent: 'space-evenly'}}>
+          <TouchableOpacity
+          onPress={nextPic}
+          >
+            <View
+            style={{
+              borderRadius: 20,
+              height: vw(36),
+              width: vw(40),
+              backgroundColor: 'white',
+              alignSelf: 'center',
+              top: vw(-10),
+              borderColor: '#FFAC30',
+              borderWidth: 4,
+              position: 'relative',
+            }}>
+              <Text style={{alignSelf: 'center', fontSize: 22, fontWeight: 'bold', color: 'black', top: vw(4), position: 'absolute', zIndex: 1}}>
+                {category[numObj].list[1].listTitle}</Text>
+              <Image source={category[numObj].list[1].pic[category[numObj].list[1].pic.length-1]}
+              style={{width: '100%', height: '100%', marginTop: vw(4)}}
+              resizeMethod='resize'
+              resizeMode='contain'
+              />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+          onPress={nextPic}
+          >
+            <View
+            style={{
+              borderRadius: 20,
+              height: vw(36),
+              width: vw(40),
+              backgroundColor: 'white',
+              alignSelf: 'center',
+              top: vw(-10),
+              borderColor: '#FFAC30',
+              borderWidth: 4,
+              position: 'relative',
+            }}>
+              <Text style={{alignSelf: 'center', fontSize: 22, fontWeight: 'bold', color: 'black', top: vw(4), position: 'absolute', zIndex: 1}}>
+                {category[numObj].list[2].listTitle}</Text>
+              <Image source={category[numObj].list[2].pic[category[numObj].list[2].pic.length-1]}
+              style={{width: '100%', height: '100%', marginTop: vw(4)}}
+              resizeMethod='resize'
+              resizeMode='contain'
+              />
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={{ marginTop: vw(3) ,width: vw(90), flexDirection:'row', alignSelf: 'center', justifyContent: 'space-evenly'}}>
+          <TouchableOpacity
+          onPress={nextPic}
+          >
+            <View
+            style={{
+              borderRadius: 20,
+              height: vw(36),
+              width: vw(40),
+              backgroundColor: 'white',
+              alignSelf: 'center',
+              top: vw(-10),
+              borderColor: '#FFAC30',
+              borderWidth: 4,
+              position: 'relative',
+            }}>
+              <Text style={{alignSelf: 'center', fontSize: 22, fontWeight: 'bold', color: 'black', top: vw(4), position: 'absolute', zIndex: 1}}>
+                {category[numObj].list[3].listTitle}</Text>
+              <Image source={category[numObj].list[3].pic[category[numObj].list[3].pic.length-1]}
+              style={{width: '100%', height: '100%', marginTop: vw(4)}}
+              resizeMethod='resize'
+              resizeMode='contain'
+              />
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+          onPress={nextPic}
+          >
+            <View
+            style={{
+              borderRadius: 20,
+              height: vw(36),
+              width: vw(40),
+              backgroundColor: 'white',
+              alignSelf: 'center',
+              top: vw(-10),
+              borderColor: '#FFAC30',
+              borderWidth: 4,
+              position: 'relative',
+            }}>
+              <Text style={{alignSelf: 'center', fontSize: 22, fontWeight: 'bold', color: 'black', top: vw(4), position: 'absolute', zIndex: 1}}>
+                {category[numObj].list[4].listTitle}</Text>
+              <Image source={category[numObj].list[4].pic[category[numObj].list[4].pic.length-1]}
+              style={{width: '100%', height: '100%', marginTop: vw(4)}}
+              resizeMethod='resize'
+              resizeMode='contain'
+              />
+            </View>
+          </TouchableOpacity>
+        </View>
+        <View
+          style={{height: vw(60), width: vw(100)}}>
+        </View>
       </View>
-    </View>
+    )
   }
 
+  const origamiPic = () => {
+    return (
+      <View>
+        <TouchableOpacity
+        onPress={nextPic}
+        >
+          <View
+          style={{
+            position: 'absolute',
+            borderRadius: 20,
+            height: vw(120),
+            width: vw(86),
+            backgroundColor: 'white',
+            alignSelf: 'center',
+            justifyContent: 'center',
+            top: vw(-10),
+          }}>
+            <Text style={{alignSelf: 'center', fontSize: 22, fontWeight: 'bold', color: '#FFAC30', top: vw(10), position: 'absolute', zIndex: 1}}>
+              {category[numObj].list[numList].listTitle}: {numListPic}/{category[numObj].list[numList].pic.length}</Text>
+            <Image source={category[numObj].list[numList].pic[numListPic]}
+            style={{width: '100%', width: '100%'}}
+            resizeMethod='resize'
+            resizeMode='contain'
+            />
+          </View>
+        </TouchableOpacity>
+        
+
+        <View
+          style={{height: vw(60), width: vw(100)}}>
+        </View>
+      </View>
+    )
+  }
+  const showBackToHome = () => {
+    return (
+      <View>
+
+      </View>
+    )
+  }
   const origamiHome = () => {
     return (
       <View>
@@ -79,6 +241,7 @@ const Home = () => {
                   </Text>
                 </View>
               </View>
+              <View style={{borderWidth: 2, height: vw(10), width: vw(10), position: 'absolute' }}></View>
               <View
                 style={{
                   width: '15%',
@@ -274,7 +437,7 @@ const Home = () => {
  
   const showWhat = () => {
     if (!doneScreen) {
-      return (origamiPic());
+      return (origamiList());
     } else {
       return (origamiHome())
     }
