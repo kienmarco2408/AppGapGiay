@@ -11,12 +11,9 @@ import {
   Alert,
 } from 'react-native';
 import { Button, TextInput } from 'react-native-paper';
-import Dovat from '../components/Dovat';
-import DoAn from '../components/DoAn';
-import DoBay from '../components/DoBay';
-import Nuoc from '../components/Nuoc';
-import Can from '../components/Can';
 import { category } from '../components/data';
+import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
+
 const Home = () => {
   const [numListPic, setNumListPic] = useState(0)
   const [numList, setNumList] = useState(0)
@@ -43,19 +40,18 @@ const Home = () => {
         <View style={{ marginLeft: 40, marginTop: 20 }}>
           <Image
             style={{ width: '15%', height: 40 }}
-            source={require('../assets/happy.png')}
+            source={require('../assets/cloud.png')}
             
           />
         </View>
 
         <View>
-          <View style={{marginTop: 30}}>
-            {/* <DoAn/> */}
+        <View style={{marginTop: 30}}>
           <TouchableHighlight
             onPress={() => {console.log(category[0].objTitle);}}
             underlayColor={'#FFFFFF'}
           >
-            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row' }}>
+            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
               <View
                 style={styles.buttonObj}
               >
@@ -78,23 +74,26 @@ const Home = () => {
                   backgroundColor: 'white',
                   borderTopRightRadius: 15,
                   borderBottomRightRadius: 15,
+                  justifyContent: 'center',
+                  alignItems: 'center',
                 }}
               >
                 <Image
                   source={category[0].objIcon}
-                  style={{ alignSelf: 'center', marginTop: 5 }}
+                  style={{width: '75%', height: '75%'}}
+                  resizeMode= 'contain'
                 />
               </View>
             </View>
           </TouchableHighlight>
           </View>
-          
+
           <View style={{marginTop: 30}}>
           <TouchableHighlight
             onPress={() => {console.log(category[1].objTitle);}}
             underlayColor={'#FFFFFF'}
           >
-            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row' }}>
+            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
               <View
                 style={styles.buttonObj}
               >
@@ -117,11 +116,14 @@ const Home = () => {
                   backgroundColor: 'white',
                   borderTopRightRadius: 15,
                   borderBottomRightRadius: 15,
+                  justifyContent: 'center',
+                  alignItems: 'center'
                 }}
               >
                 <Image
                   source={category[1].objIcon}
-                  style={{ alignSelf: 'center', marginTop: 5 }}
+                  style={{width: '80%', height: '80%'}}
+                  resizeMode= 'contain'
                 />
               </View>
             </View>
@@ -133,7 +135,7 @@ const Home = () => {
             onPress={() => {console.log(category[2].objTitle);}}
             underlayColor={'#FFFFFF'}
           >
-            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row' }}>
+            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
               <View
                 style={styles.buttonObj}
               >
@@ -156,11 +158,14 @@ const Home = () => {
                   backgroundColor: 'white',
                   borderTopRightRadius: 15,
                   borderBottomRightRadius: 15,
+                  justifyContent: 'center',
+                  alignItems: 'center'
                 }}
               >
                 <Image
                   source={category[2].objIcon}
-                  style={{ alignSelf: 'center', marginTop: 5 }}
+                  style={{width: '80%', height: '80%'}}
+                  resizeMode= 'contain'
                 />
               </View>
             </View>
@@ -172,7 +177,7 @@ const Home = () => {
             onPress={() => {console.log(category[3].objTitle);}}
             underlayColor={'#FFFFFF'}
           >
-            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row' }}>
+            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
               <View
                 style={styles.buttonObj}
               >
@@ -195,11 +200,14 @@ const Home = () => {
                   backgroundColor: 'white',
                   borderTopRightRadius: 15,
                   borderBottomRightRadius: 15,
+                  justifyContent: 'center',
+                  alignItems: 'center'
                 }}
               >
                 <Image
                   source={category[3].objIcon}
-                  style={{ alignSelf: 'center', marginTop: 5 }}
+                  style={{width: '80%', height: '80%'}}
+                  resizeMode= 'contain'
                 />
               </View>
             </View>
@@ -211,7 +219,7 @@ const Home = () => {
             onPress={() => {console.log(category[4].objTitle);}}
             underlayColor={'#FFFFFF'}
           >
-            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row' }}>
+            <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
               <View
                 style={styles.buttonObj}
               >
@@ -234,16 +242,20 @@ const Home = () => {
                   backgroundColor: 'white',
                   borderTopRightRadius: 15,
                   borderBottomRightRadius: 15,
+                  justifyContent: 'center',
+                  alignItems: 'center'
                 }}
               >
                 <Image
                   source={category[4].objIcon}
-                  style={{ alignSelf: 'center', marginTop: 5 }}
+                  style={{width: '80%', height: '80%'}}
+                  resizeMode= 'contain'
                 />
               </View>
             </View>
           </TouchableHighlight>
           </View>
+
 
         </View>
         {/* <View
@@ -283,21 +295,23 @@ const Home = () => {
         >
           <Nuoc />
         </View> */}
-        <View style={{ marginTop: '15%', justifyContent: 'center' }}>
+        
+        
+      </View>
+        <View style={{ justifyContent: 'center' }}>
           <Image
-            source={require('../assets/hoatiet.png')}
+            source={require('../assets/bottomBack.svg')}
             style={{ alignItems: 'center', width: '110%' }}
           />
         </View>
-      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   buttonObj: {
-    width: '70%',
-    height: '100%',
+    width: '60%',
+    justifyContent: 'center',
     backgroundColor: '#FFAC30',
     borderWidth: 1,
     borderColor: '#FFAC30',
@@ -307,6 +321,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#ade2e6',
+
   },
   background: {
     flex: 1,

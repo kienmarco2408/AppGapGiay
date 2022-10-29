@@ -9,19 +9,7 @@ import Splash from '../screens/Splash';
 import Home from '../screens/Home';
 import News from '../screens/News';
 import Signin from '../screens/Signin';
-import Detail from '../components/Detail';
-import Detail2 from '../components/Detail2';
-import FoodDetail from '../components/FoodDetail';
 import Users from '../screens/Users';
-
-import CaiBap from '../components/Caibap';
-import CaiBap2 from '../components/Caibap2';
-import CaiBap3 from '../components/Caibap3';
-import CaiBap4 from '../components/Caibap4';
-import CaiBap5 from '../components/Caibap5';
-import CaiBap6 from '../components/Caibap6';
-import CaiBap7 from '../components/Caibap7';
-import CaiBap8 from '../components/Caibap8';
 
 import Read from '../components/Read';
 import Chat from '../screens/Chat';
@@ -31,16 +19,6 @@ function HomeStacks() {
   return (
     <HomeStack.Navigator screenOptions={{ headerShown: false }}>
       <HomeStack.Screen name="Home Stack" component={Home} />
-      <HomeStack.Screen name="Detail" component={Detail} />
-      <HomeStack.Screen name="Detail2" component={Detail2} />
-      <HomeStack.Screen name="C1" component={CaiBap} />
-      <HomeStack.Screen name="C2" component={CaiBap2} />
-      <HomeStack.Screen name="C3" component={CaiBap3} />
-      <HomeStack.Screen name="C4" component={CaiBap4} />
-      <HomeStack.Screen name="C5" component={CaiBap5} />
-      <HomeStack.Screen name="C6" component={CaiBap6} />
-      <HomeStack.Screen name="C7" component={CaiBap7} />
-      <HomeStack.Screen name="C8" component={CaiBap8} />
     </HomeStack.Navigator>
   );
 }
@@ -215,7 +193,6 @@ function RootStack() {
 
         <RootStacks.Screen name="Tabs" component={Tabs} />
 
-        <RootStacks.Screen name="Food" component={FoodDetail} />
       </RootStacks.Navigator>
     </NavigationContainer>
   );
