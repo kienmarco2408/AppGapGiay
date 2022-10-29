@@ -26,7 +26,7 @@ const Home = () => {
   const objVisible = 'display: true'
 
   const nextPic = () => {
-    if (numListPic < category[numObj].list[numList].pic.length) {
+    if (numListPic < category[numObj].list[numList].pic.length - 1) {
       setNumListPic(numListPic + 1)
     } else {
       setDoneScreen(true)
@@ -43,7 +43,7 @@ const Home = () => {
       <View>
         <View>
           <TouchableOpacity
-          onPress={()=>{setNumList(0); setDoneScreen(2)}}
+          onPress={()=>{setNumList(0); setDoneScreen(2); setNumListPic(0)}}
           >
             <View
             style={{
@@ -70,7 +70,7 @@ const Home = () => {
 
         <View style={{ marginTop: vw(3) ,width: vw(90), flexDirection:'row', alignSelf: 'center', justifyContent: 'space-evenly'}}>
           <TouchableOpacity
-          onPress={()=>{setNumList(1); setDoneScreen(2)}}
+          onPress={()=>{setNumList(1); setDoneScreen(2); setNumListPic(0)}}
           >
             <View
             style={{
@@ -94,7 +94,7 @@ const Home = () => {
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-          onPress={()=>{setNumList(2); setDoneScreen(2)}}
+          onPress={()=>{setNumList(2); setDoneScreen(2); setNumListPic(0)}}
           >
             <View
             style={{
@@ -121,7 +121,7 @@ const Home = () => {
 
         <View style={{ marginTop: vw(3) ,width: vw(90), flexDirection:'row', alignSelf: 'center', justifyContent: 'space-evenly'}}>
           <TouchableOpacity
-          onPress={()=>{setNumList(3); setDoneScreen(2)}}
+          onPress={()=>{setNumList(3); setDoneScreen(2); setNumListPic(0)}}
           >
             <View
             style={{
@@ -145,7 +145,7 @@ const Home = () => {
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-          onPress={()=>{setNumList(4); setDoneScreen(2)}}
+          onPress={()=>{setNumList(4); setDoneScreen(2); setNumListPic(0)}}
           >
             <View
             style={{
@@ -180,6 +180,11 @@ const Home = () => {
     return (
       <View>
         <TouchableOpacity
+        style={{
+          alignSelf: 'center',
+          height: vw(120),
+            width: vw(86),
+        }}
         onPress={nextPic}
         >
           <View
@@ -194,7 +199,7 @@ const Home = () => {
             top: vw(-10),
           }}>
             <Text style={{alignSelf: 'center', fontSize: 22, fontWeight: 'bold', color: '#FFAC30', top: vw(10), position: 'absolute', zIndex: 1}}>
-              {category[numObj].list[numList].listTitle}: {numListPic}/{category[numObj].list[numList].pic.length}</Text>
+              {category[numObj].list[numList].listTitle}: {numListPic + 1}/{category[numObj].list[numList].pic.length}</Text>
             <Image source={category[numObj].list[numList].pic[numListPic]}
             style={{width: '100%', width: '100%'}}
             resizeMethod='resize'
