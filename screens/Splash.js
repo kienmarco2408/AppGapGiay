@@ -10,35 +10,36 @@ import {
 } from 'react-native';
 import { Button, List } from 'react-native-paper';
 import { category } from '../components/data';
+import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 function Splash({ navigation }) {
   
   return (
     <View style={styles.container}>
       <StatusBar />
-      <View style={{ marginLeft: 40, marginTop: 20 }}>
-        <Image source={require('../assets/happy.png')} style={{}} />
-      </View>
+      <Image
+            style={{width: vw(100) , height: vw(40), marginLeft: 0 }}
+            source={require('../assets/cloud.png')}
+          />
       <View>
         <View>
           <View
             style={{
-              width: 319,
-              height: 431,
+              width: vw(80),
               backgroundColor: '#FFFFFF',
               alignSelf: 'center',
               borderRadius: 20,
               alignItems: 'center',
-              top: '2%',
+              paddingVertical: vw(8)
             }}
           >
-            <View style={{ top: '5%' }}>
+            <View style={{ marginTop: vw(4)}}>
               <Image source={require('../assets/logo.png')} />
             </View>
-            <View style={{ top: '7%' }}>
+            <View style={{ marginTop: vw(2)}}>
               <Text
                 style={{
-                  fontWeight: '400',
-                  fontSize: 15,
+                  fontWeight: 'bold',
+                  fontSize: 16,
                   textAlign: 'center',
                   color: '#FFAC30',
                 }}
@@ -47,33 +48,29 @@ function Splash({ navigation }) {
               </Text>
             </View>
 
-            <View style={{ top: '5%' }}>
+            <View style={{ marginTop: vw(4)}}>
               <Text
-                style={{ fontWeight: '400', fontSize: 14, textAlign: 'center' }}
+                style={{ fontWeight: '400', fontSize: 16, textAlign: 'center', width: vw(60) }}
               >
-                {'\n'}Nhấn vào Chấp nhận và Tiếp tục để {'\n'} xác nhận bạn đã
-                xem lại và chấp nhận.{'\n'} Điều khoản sử dụng và chính sách bảo{' '}
-                {'\n'} bảo mật của chúng tôi
+                Nhấn vào Chấp nhận và Tiếp tục để  xác nhận bạn đã xem lại và chấp nhận. Điều khoản sử dụng và chính sách bảo bảo mật của chúng tôi
               </Text>
             </View>
 
-            <View style={{ top: '10%' }}>
+            <View style={{ marginTop: vw(4) }}>
               <Text
-                style={{ fontWeight: '700', fontSize: 14, textAlign: 'center' }}
-              >
-                {'\n'}Điều khoản sử dụng
+                style={{ fontWeight: '700', fontSize: 16, textAlign: 'center' }}
+              >Điều khoản sử dụng
               </Text>
             </View>
 
-            <View style={{ top: '10%' }}>
+            <View style={{ marginTop: vw(6) }}>
               <Text
-                style={{ fontWeight: '700', fontSize: 12, textAlign: 'center' }}
-              >
-                Chính Sách Sử Dụng{' '}
+                style={{ fontWeight: '700', fontSize: 16, textAlign: 'center' }}
+              >Chính Sách Sử Dụng
               </Text>
             </View>
 
-            <View style={{ top: '25%' }}>
+            <View style={{ marginTop: vw(8) }}>
             
               <Button
                 style={{
@@ -86,31 +83,22 @@ function Splash({ navigation }) {
                 mode="contained"
                 onPress={() => navigation.navigate('Sign in')}
               >
-                {' '}
-                ĐỒNG Ý VÀ TIẾP TỤC{' '}
+                <Text style={{fontWeight: 'bold', fontSize: 18}}>
+                ĐỒNG Ý VÀ TIẾP TỤC</Text>
               </Button>
             </View>
             
-            <View style={{ top: '30%' }}>
-              <Text style={{ fontSize: 14, textAlign: 'center' }}>
-                Bạn đã có tài khoản chưa ? {''}
-                <Text
-                  onPress={() => Alert.alert('HI')}
-                  style={{ color: '#5EA466' }}
-                >
-                  Đăng ký{' '}
-                </Text>
-              </Text>
-            </View>
+            
           </View>
         </View>
       </View>
-      <View style={{ top: '10%' }}>
-        <Image
-          source={require('../assets/hoatiet.png')}
-          style={{ width: '110%' }}
-        />
-      </View>
+      <View style={{justifyContent: 'center'}}>
+          <Image
+            source={require('../assets/bottomBack.png')}
+            style={{width: vw(100), height: vw(50)}}
+            resizeMode="center"
+          />
+        </View>
     </View>
   );
 }

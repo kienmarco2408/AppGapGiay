@@ -19,6 +19,8 @@ const Home = () => {
   const [numList, setNumList] = useState(0)
   const [numObj, setNumObj] = useState(0)
   const [doneScreen, setDoneScreen] = useState(false)
+  const objHidden = 'diplay: none'
+  const objVisible = 'display: true'
 
   const nextPic = () => {
     if (numListPic < category[numObj].list[numList].pic.length - 1) {
@@ -33,19 +35,29 @@ const Home = () => {
     setDoneScreen(false)
   }
 
- 
-  return (
-    <View style={styles.container}>
-      <View style={styles.background}>
-        <View>
-          <Image
-            style={{width: vw(115) , height: vw(40), marginLeft: 0 }}
-            source={require('../assets/cloud.png')}
-            
-          />
-        </View>
+  const origamiPic = () => {
+    <View>
+      <View
+        style={{height: vw(60), width: vw(100)}}>
+      </View>
 
-        <View>
+      <View
+      style={{
+        position: 'absolute',
+        flex: 1,
+        borderWidth: 10,
+        height: vw(80),
+        width: vw(80),
+        backgroundColor: 'black'
+      }}>
+        <Text>heheheh</Text>
+      </View>
+    </View>
+  }
+
+  const origamiHome = () => {
+    return (
+      <View>
         <View style={{marginTop: 30}}>
           <TouchableHighlight
             onPress={() => {console.log(category[0].objTitle);}}
@@ -256,6 +268,29 @@ const Home = () => {
           </TouchableHighlight>
           </View>
 
+      </View>
+    )
+  }
+ 
+  const showWhat = () => {
+    if (!doneScreen) {
+      return (origamiPic());
+    } else {
+      return (origamiHome())
+    }
+  }
+  return (
+    <View style={styles.container}>
+      <View style={styles.background}>
+        <View>
+          <Image
+            style={{width: vw(100) , height: vw(40), marginLeft: 0 }}
+            source={require('../assets/cloud.png')}
+          />
+        </View>
+
+        <View style={{height: vw(100)}}>
+          {showWhat()}
 
         </View>
         {/* <View
@@ -298,10 +333,11 @@ const Home = () => {
         
         
       </View>
-        <View style={{ justifyContent: 'center' }}>
+        <View style={{justifyContent: 'center'}}>
           <Image
-            source={require('../assets/bottomBack.svg')}
-            style={{ alignItems: 'center', width: '110%' }}
+            source={require('../assets/bottomBack.png')}
+            style={{width: vw(100), height: vw(50)}}
+            resizeMode="center"
           />
         </View>
     </View>
@@ -310,13 +346,14 @@ const Home = () => {
 
 const styles = StyleSheet.create({
   buttonObj: {
-    width: '60%',
+    width: '65%',
     justifyContent: 'center',
     backgroundColor: '#FFAC30',
     borderWidth: 1,
     borderColor: '#FFAC30',
     borderTopLeftRadius: 15,
     borderBottomLeftRadius: 15,
+    paddingHorizontal: vw(2),
   },
   container: {
     flex: 1,

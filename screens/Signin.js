@@ -12,6 +12,7 @@ import {
   TextInput,
 } from 'react-native';
 import { Button, Checkbox } from 'react-native-paper';
+import { vw, vh, vmin, vmax } from 'react-native-expo-viewport-units';
 
 function Signin() {
   const navigation = useNavigation();
@@ -21,30 +22,37 @@ function Signin() {
   return (
     <View style={styles.container}>
       <StatusBar />
-      <View style={{ marginLeft: 40, marginTop: 20 }}>
-        <Image source={require('../assets/happy.png')} style={{}} />
-      </View>
+      <View>
+          <Image
+            style={{width: vw(100) , height: vw(25), marginLeft: 0 }}
+            source={require('../assets/cloud.png')}
+          />
+        </View>
       <View>
         <View>
-          <View
+        <View
             style={{
-              width: 319,
-              height: 523,
+              width: vw(80),
               backgroundColor: '#FFFFFF',
               alignSelf: 'center',
               borderRadius: 20,
               alignItems: 'center',
+              paddingVertical: vw(8)
             }}
           >
-            <View style={{ top: '1%' }}>
+            <View>
               <Image source={require('../assets/logo.png')} />
             </View>
-
-            <View style={{ top: '1%' }}>
+            <View style={{ marginTop: vw(2)}}>
               <Text
-                style={{ color: '#FFAC30', fontSize: 12, fontWeight: '700' }}
+                style={{
+                  fontWeight: 'bold',
+                  fontSize: 16,
+                  textAlign: 'center',
+                  color: '#FFAC30',
+                }}
               >
-                Blisskidz{' '}
+                Blisskidz
               </Text>
             </View>
             <View style={{ marginTop: 19 }}>
@@ -52,7 +60,8 @@ function Signin() {
                 style={{
                   textTransform: 'uppercase',
                   textAlign: 'center',
-                  fontSize: 20,
+                  fontSize: 22,
+                  letterSpacing: 1.5,
                   lineHeight: 30,
                   fontWeight: 'bold',
                 }}
@@ -68,16 +77,16 @@ function Signin() {
                   backgroundColor: 'white',
                   borderRadius: 35,
                   borderColor: '#FFAC30',
-                  height: 46,
-                  width: 248,
+                  height: vw(12),
+                  width: vw(60),
                   borderWidth: 1,
                 }}
               >
                 <TextInput
                   style={{
-                    height: 46,
-                    width: 248,
-                    paddingLeft: 13,
+                    height: vw(12),
+                    width: vw(60),
+                    paddingLeft: vw(4),
                   }}
                   placeholder="user name"
                 />
@@ -87,38 +96,36 @@ function Signin() {
                   marginHorizontal: '5%',
                   backgroundColor: 'white',
                   borderRadius: 35,
-                  marginTop: 7,
+                  marginTop: vw(2),
                   borderColor: '#FFAC30',
                   borderWidth: 1,
-                  height: 46,
-                  width: 248,
+                  
                 }}
               >
                 <TextInput
                   style={{
-                    height: 46,
-                    width: 248,
-                    paddingLeft: 13,
+                    height: vw(12),
+                    width: vw(60),
+                    paddingLeft: vw(4),
                   }}
                   secureTextEntry={true}
                   placeholder="password"
                 />
               </View>
             </View>
-            <View style={{ marginTop: 56 }}>
+            <View style={{ marginTop: vw(8) }}>
               <Button
                 style={{
                   borderRadius: 35,
-                  width: 248,
-                  height: 46,
+                  width: vw(60),
+                  height: vw(12),
                   backgroundColor: '#FFAC30',
                   justifyContent: 'center',
                 }}
                 mode="contained"
                 onPress={() => navigation.navigate('Tabs')}
               >
-                {' '}
-                Đăng nhập{' '}
+                <Text style={{fontWeight: 'bold', fontSize: 18}}>Đăng nhập</Text>
               </Button>
             </View>
 
@@ -126,17 +133,17 @@ function Signin() {
               <Text>hoặc tiếp tục với</Text>
             </View>
 
-            <View style={{ flexDirection: 'row', marginTop: '5%' }}>
+            <View style={{ flexDirection: 'row', marginTop: '5%', justifyContent: 'space-evenly', width: '100%'}}>
               <View
                 style={{
-                  width: 140,
-                  height: 38,
+                  width: vw(30),
+                  height: vw(8),
                   borderRadius: 6,
                   backgroundColor: '#EEF1F4',
                   flexDirection: 'row',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginLeft: '5%',
+                
                 }}
               >
                 <Image
@@ -148,14 +155,13 @@ function Signin() {
 
               <View
                 style={{
-                  width: 140,
-                  height: 38,
+                  width: vw(30),
+                  height: vw(8),
                   borderRadius: 6,
                   backgroundColor: '#EEF1F4',
                   flexDirection: 'row',
                   justifyContent: 'center',
                   alignItems: 'center',
-                  marginHorizontal: 18,
                 }}
               >
                 <Image
@@ -174,11 +180,11 @@ function Signin() {
           </View>
         </View>
 
-        <View>
+        <View style={{justifyContent: 'center',}}>
           <Image
-            source={require('../assets/hoatiet.png')}
-            resizeMode="cover"
-            style={{ width: '110%' }}
+            source={require('../assets/bottomBack.png')}
+            style={{width: vw(100), height: vw(50)}}
+            resizeMode="center"
           />
         </View>
       </View>
