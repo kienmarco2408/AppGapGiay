@@ -43,7 +43,7 @@ const Home = () => {
       <View>
         <View>
           <TouchableOpacity
-          onPress={nextPic}
+          onPress={()=>{setNumList(0); setDoneScreen(2)}}
           >
             <View
             style={{
@@ -70,7 +70,7 @@ const Home = () => {
 
         <View style={{ marginTop: vw(3) ,width: vw(90), flexDirection:'row', alignSelf: 'center', justifyContent: 'space-evenly'}}>
           <TouchableOpacity
-          onPress={nextPic}
+          onPress={()=>{setNumList(1); setDoneScreen(2)}}
           >
             <View
             style={{
@@ -94,7 +94,7 @@ const Home = () => {
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-          onPress={nextPic}
+          onPress={()=>{setNumList(2); setDoneScreen(2)}}
           >
             <View
             style={{
@@ -121,7 +121,7 @@ const Home = () => {
 
         <View style={{ marginTop: vw(3) ,width: vw(90), flexDirection:'row', alignSelf: 'center', justifyContent: 'space-evenly'}}>
           <TouchableOpacity
-          onPress={nextPic}
+          onPress={()=>{setNumList(3); setDoneScreen(2)}}
           >
             <View
             style={{
@@ -145,7 +145,7 @@ const Home = () => {
             </View>
           </TouchableOpacity>
           <TouchableOpacity
-          onPress={nextPic}
+          onPress={()=>{setNumList(4); setDoneScreen(2)}}
           >
             <View
             style={{
@@ -222,7 +222,7 @@ const Home = () => {
       <View>
         <View style={{marginTop: 30}}>
           <TouchableHighlight
-            onPress={() => {console.log(category[0].objTitle);}}
+            onPress={() => {setNumObj(0); setDoneScreen(1)}}
             underlayColor={'#FFFFFF'}
           >
             <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
@@ -241,7 +241,6 @@ const Home = () => {
                   </Text>
                 </View>
               </View>
-              <View style={{borderWidth: 2, height: vw(10), width: vw(10), position: 'absolute' }}></View>
               <View
                 style={{
                   width: '15%',
@@ -265,7 +264,7 @@ const Home = () => {
 
           <View style={{marginTop: 30}}>
           <TouchableHighlight
-            onPress={() => {console.log(category[1].objTitle);}}
+            onPress={() => {setNumObj(1); setDoneScreen(1)}}
             underlayColor={'#FFFFFF'}
           >
             <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
@@ -307,7 +306,7 @@ const Home = () => {
 
           <View style={{marginTop: 30}}>
           <TouchableHighlight
-            onPress={() => {console.log(category[2].objTitle);}}
+            onPress={() => {setNumObj(2); setDoneScreen(1)}}
             underlayColor={'#FFFFFF'}
           >
             <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
@@ -349,7 +348,7 @@ const Home = () => {
 
           <View style={{marginTop: 30}}>
           <TouchableHighlight
-            onPress={() => {console.log(category[3].objTitle);}}
+            onPress={() => {setNumObj(3); setDoneScreen(1)}}
             underlayColor={'#FFFFFF'}
           >
             <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
@@ -391,7 +390,7 @@ const Home = () => {
 
           <View style={{marginTop: 30}}>
           <TouchableHighlight
-            onPress={() => {console.log(category[4].objTitle);}}
+            onPress={() => {setNumObj(4); setDoneScreen(1)}}
             underlayColor={'#FFFFFF'}
           >
             <View style={{ justifyContent: 'center' ,alignSelf: 'center', flexDirection: 'row', height: vw(14) }}>
@@ -436,10 +435,12 @@ const Home = () => {
   }
  
   const showWhat = () => {
-    if (!doneScreen) {
-      return (origamiList());
-    } else {
-      return (origamiHome())
+    if (doneScreen==0) {
+      return (origamiHome());
+    } else if (doneScreen==1) {
+      return (origamiList())
+    } else if (doneScreen==2) {
+      return (origamiPic())
     }
   }
   return (
@@ -456,43 +457,6 @@ const Home = () => {
           {showWhat()}
 
         </View>
-        {/* <View
-          style={{
-            marginTop: '10%',
-          }}
-        >
-          <DoAn />
-        </View>
-
-        <View
-          style={{
-            marginTop: '10%',
-          }}
-        >
-          <Dovat />
-        </View>
-
-        <View
-          style={{
-            marginTop: '10%',
-          }}
-        >
-          <Can />
-        </View>
-        <View
-          style={{
-            marginTop: '10%',
-          }}
-        >
-          <DoBay />
-        </View>
-        <View
-          style={{
-            marginTop: '10%',
-          }}
-        >
-          <Nuoc />
-        </View> */}
         
         
       </View>
